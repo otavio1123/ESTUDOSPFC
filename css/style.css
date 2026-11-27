@@ -1,0 +1,262 @@
+:root {
+    color-scheme: light;
+    --sim-blue-950: #0a2540;
+    --sim-blue-700: #1557a0;
+    --sim-blue-600: #1f6fc7;
+    --sim-blue-100: #dcecff;
+    --sim-blue-50: #eff7ff;
+    --bs-primary: #1557a0;
+    --bs-primary-rgb: 21, 87, 160;
+    --bs-link-color: #1557a0;
+    --bs-link-hover-color: #123f70;
+}
+
+body {
+    min-width: 320px;
+    width: 100%;
+    overflow-x: hidden;
+    color: var(--sim-blue-950);
+    background:
+        radial-gradient(circle at 10% 5%, rgba(80, 157, 235, 0.14), transparent 28rem),
+        radial-gradient(circle at 90% 92%, rgba(21, 87, 160, 0.09), transparent 30rem),
+        #f7faff;
+}
+
+.app-shell,
+.app-shell > section,
+.card-body {
+    min-width: 0;
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(31, 111, 199, 0.35);
+    outline-offset: 3px;
+}
+
+.hero {
+    max-width: 720px;
+}
+
+.hero h1 {
+    color: var(--sim-blue-950);
+    font-size: clamp(2rem, 8vw, 4.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    overflow-wrap: break-word;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--sim-blue-700);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.project-name {
+    color: var(--sim-blue-600);
+    font-size: clamp(1.25rem, 3vw, 1.7rem);
+}
+
+.professor-selection {
+    max-width: 1080px;
+}
+
+.professor-card {
+    width: 100%;
+    min-height: 180px;
+    color: var(--sim-blue-950);
+    background-color: rgba(255, 255, 255, 0.94);
+    cursor: pointer;
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.professor-card .card-body {
+    width: 100%;
+}
+
+.professor-card .card-body > span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.professor-card--all {
+    min-height: 132px;
+}
+
+.professor-card:hover {
+    border-color: #94bce7;
+    box-shadow: 0 16px 32px rgba(31, 111, 199, 0.16) !important;
+    transform: translateY(-3px);
+}
+
+.professor-card.is-selected {
+    border-color: var(--sim-blue-600);
+    background-color: var(--sim-blue-50);
+    box-shadow: 0 0 0 3px rgba(31, 111, 199, 0.18), 0 16px 32px rgba(31, 111, 199, 0.16) !important;
+}
+
+.professor-card__initials {
+    width: 56px;
+    height: 56px;
+    display: inline-grid;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 1rem;
+    color: var(--sim-blue-700);
+    background-color: var(--sim-blue-100);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.start-button,
+.btn {
+    max-width: 100%;
+    white-space: normal;
+}
+
+.start-button {
+    width: 100%;
+}
+
+.simulation-wrapper {
+    width: 100%;
+    max-width: 900px;
+}
+
+.simulation-toolbar,
+.scoreboard,
+.question-progress,
+.question-meta {
+    min-width: 0;
+}
+
+.scoreboard {
+    max-width: 100%;
+}
+
+.question-card {
+    width: 100%;
+    min-width: 0;
+    background-color: rgba(255, 255, 255, 0.97);
+}
+
+.progress {
+    height: 0.45rem;
+    min-width: 5rem;
+}
+
+.meta-badge,
+.score-badge {
+    font-size: 0.9rem;
+}
+
+.meta-badge {
+    max-width: 100%;
+    line-height: 1.35;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.score-badge {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.question-title {
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.answer-panel {
+    max-width: 100%;
+    border-left: 4px solid var(--sim-blue-600) !important;
+    color: #34465a;
+    background-color: var(--sim-blue-50);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.answer-panel p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.button--correct.is-selected,
+.button--wrong.is-selected {
+    box-shadow: 0 0 0 0.25rem rgba(10, 37, 64, 0.18) !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (min-width: 576px) {
+    .start-button {
+        width: auto;
+        min-width: 15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .question-card {
+        border-radius: 1rem !important;
+    }
+
+    .question-title {
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        letter-spacing: -0.035em;
+    }
+
+    .hero .text-secondary {
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+
+    .professor-card {
+        min-height: 9.5rem;
+    }
+
+    .professor-card--all {
+        min-height: 7.75rem;
+    }
+
+    .simulation-toolbar {
+        align-items: flex-start !important;
+    }
+
+    .scoreboard {
+        width: 100%;
+        justify-content: flex-start !important;
+    }
+
+    .question-meta .meta-badge {
+        width: 100%;
+    }
+
+    .answer-panel {
+        padding: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
